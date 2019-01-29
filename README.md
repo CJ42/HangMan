@@ -15,11 +15,11 @@ A simple implementation of a Guessing Game (HangMan) into a SmartContract writte
 The guess word will be hidden through ```Keccak256(guessWord)``` hashing function. In fact, Keccak256 (SHA-3) is cheaper in gas consumption compared to other built-in cryptographic functions:
 
 
-| Hash Function            | Returns     | Gas Cost                                     |
-| -------------------------|:-----------:| --------------------------------------------:|
-| sha3(...) or keccak(256) |  bytes32    | 30 gas + 6 gas for each word (rounded up)    |
-| sha256(...)              |  bytes32    | 60 gas + 12 gas for each word (rounded up)   |
-| ripemd160(...)           |  bytes20    | 600 gas + 120 gas for each word (rounded up) |
+| Hash Function               | Returns   | Gas Cost                                     |
+| -------------------------   |-----------| ---------------------------------------------|
+| sha3(...) or keccak256(...) |  bytes32  | 30 gas + 6 gas for each word (rounded up)    |
+| sha256(...)                 |  bytes32  | 60 gas + 12 gas for each word (rounded up)   |
+| ripemd160(...)              |  bytes20  | 600 gas + 120 gas for each word (rounded up) |
 
 
 

@@ -20,18 +20,18 @@ The guess word will be hidden through ```Keccak256(guessWord)``` hashing functio
 | sha3(...) or keccak256(...) |  bytes32  | 30 gas + 6 gas for each word (rounded up)    |
 | sha256(...)                 |  bytes32  | 60 gas + 12 gas for each word (rounded up)   |
 | ripemd160(...)              |  bytes20  | 600 gas + 120 gas for each word (rounded up) |
-
+source: [*ethereum.stackexchange.com*](https://ethereum.stackexchange.com/questions/3184/what-is-the-cheapest-hash-function-available-in-solidity)
 
 
 
 # Good Resources + Research
 
-* (HangMan - Wikipedia)[https://en.wikipedia.org/wiki/Hangman_(game)]
-* (HangMan Strategy: a solution to beat the game)[http://datagenetics.com/blog/april12012/index.html]
+* [HangMan - Wikipedia](https://en.wikipedia.org/wiki/Hangman_(game))
+* [HangMan Strategy: a solution to beat the game](http://datagenetics.com/blog/april12012/index.html)
 
 
 # Technical Resources
 
-* (EVM Opcodes)[https://ethervm.io/]
-* (EVM Opcodes + Gas Consumption based on PUSH / POP Stack operations)[https://github.com/djrtwo/evm-opcode-gas-costs/blob/master/opcode-gas-costs_EIP-150_revision-1e18248_2017-04-12.csv]
-* (Ethereum YellowPaper)[http://gavwood.com/paper.pdf]
+* [EVM Opcodes](https://ethervm.io/)
+* [EVM Opcodes + Gas Consumption based on PUSH / POP Stack operations](https://github.com/djrtwo/evm-opcode-gas-costs/blob/master/opcode-gas-costs_EIP-150_revision-1e18248_2017-04-12.csv)
+* [Ethereum YellowPaper](http://gavwood.com/paper.pdf)

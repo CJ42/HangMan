@@ -1,9 +1,12 @@
 // WARNING ! THIS PROJECT IS UNDER DEVELOPMENT. DO NOT USE THIS CODE FOR PRODUCTION READY ON THE ETHEREUM NETWORK !
-pragma solidity ^0.5.0
+pragma solidity ^0.5.0;
 
 import "/library.sol";
 
-/** @title Hangman game */
+/** 
+ * @title Hangman game 
+ * @dev Base Contract for the game functionalities
+ */
 contract HangMan {
 
     address private payable owner;

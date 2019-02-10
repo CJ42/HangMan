@@ -4,7 +4,7 @@ pragma solidity ^0.5.0;
 library Hashing {
 
     function returnHash(string str) internal returns (bytes32) {
-        hash = keccak256(str);
+        hash = keccak256(abi.encode(str));
         returns hash;
     }
 }

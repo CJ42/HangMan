@@ -22,6 +22,11 @@ The guess word will be hidden through ```Keccak256(guessWord)``` hashing functio
 | ripemd160(...)              |  bytes20  | 600 gas + 120 gas for each word (rounded up) |
 source: [*ethereum.stackexchange.com*](https://ethereum.stackexchange.com/questions/3184/what-is-the-cheapest-hash-function-available-in-solidity)
 
+## Date and Time
+
+The dates and time (to check how long does the user wait before to play a letter) is calculated using an external contract. Time is represented in UNIX format.
+https://ethereum.stackexchange.com/questions/3034/how-to-get-current-time-by-solidity
+
 
 
 # Good Resources + Research

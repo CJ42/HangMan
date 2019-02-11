@@ -1,13 +1,13 @@
 pragma solidity ^0.5.0;
 // WARNING ! THIS PROJECT IS UNDER DEVELOPMENT. DO NOT USE THIS CODE FOR PRODUCTION READY ON THE ETHEREUM NETWORK !
 
-import "/library.sol";
+import "./lib.sol";
 
-/** 
- * @title Hangman game 
- * @dev Base Contract for the game functionalities
- */
 contract HangMan {
+    /** 
+     * @title Hangman game 
+     * @dev Base Contract for the game functionalities
+     */
 
     address private owner;
     address private player;
@@ -37,6 +37,19 @@ contract HangMan {
         _;
     }
 
+    // This modifier should be needed to assess time difference btw last function call and current time (less than 5 min)
+    // Not sure about that
+    /*
+     * @title       
+     * @dev         Assess time difference between last function call and current time
+     *              Should be less than 5 minutes
+     * @source      https://github.com/pipermerriam/ethereum-datetime
+     */
+    modifier timeExpired {
+        // assert();
+        _;
+    }
+
     event SenderLogger(address);
     event ValueLogger(uint);
 
@@ -53,11 +66,10 @@ contract HangMan {
       * @param uint value.
       * @return bool true.
       */
-    function makeDeposit(uint deposit) public payable validValue returns (bool) {
+    function playGame(uint deposit) public payable validValue returns (bool) {
         require (owner.balance >= deposit, "Not enough funds");
         owner.transfer(deposit);
         return true;
-
     }
 
     /** @dev Start the game by an initial deposit.
@@ -66,11 +78,11 @@ contract HangMan {
       */
     function SubmitWord (string memory guessWord) public {
         // Ask for user input?
-        string memory storedWord = returnHash(guessWord);
+        // string memory storedWord = returnHash(guessWord);
     }
 
     function guessAttempt(string memory str) public payable returns (bool){
-        // Require un certain period of time to enter input
+        // Require un certain period of time to enter input (timeExpired)
         // 11 attempts maximum
         require(counter < attempt, "You have already tried 11 attempts, Sorry !");
         i = 0;
@@ -84,13 +96,14 @@ contract HangMan {
      * @dev Push a new guess to the game
      * @return uint (Increment the counter)
      */
-    function addGuess() public returns (uint) {
+    function addGuess(string _letter) public returns (uint) {
+        attempt = _letter;
         return counter + 1;
     }
 
-    function win(uint deposit) private payable {
+    function win(uint _deposit) private payable {
         // transfer money if the guesser win
-        player.balance += deposit;
+        player.balance += _deposit;
     }
 
     function getResult() public view returns (bool) {
